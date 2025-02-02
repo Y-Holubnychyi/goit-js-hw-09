@@ -1,101 +1,115 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
-/* Common styles */
-@import url('./reset.css');
-@import url('./base.css');
-@import url('./container.css');
-@import url('./animations.css');
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 
-/* Sections style */
-@import url('./header.css');
-@import url('./vite-promo.css');
-@import url('./badges.css');
-@import url('./back-link.css');
-@import url('./footer.css');
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  margin: 0;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  max-width: 1128px;
+  margin: 0 auto;
+  padding: 24px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .gallery {
   display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
   justify-content: center;
-  padding: 20px;
-  list-style: none;
-  margin: 0;
-  max-width: 1200px;
-}
-
-.gallery-item {
-  min-width: 200px;
-  flex: 1 1 calc(33% - 15px);
-  max-width: calc(33% - 15px);
-  box-sizing: border-box;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.gallery-item:hover {
-  transform: scale(1.01);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25);
-  filter: brightness(1.1); /* Збільшення яскравості */
-}
-
-.gallery-link {
-  display: block;
-  text-decoration: none;
-  color: inherit;
+  flex-wrap: wrap;
+  gap: 24px;
 }
 
 .gallery-image {
-  width: 100%;
-  height: auto;
+  max-width: 360px;
+  height: 200px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #2e2f42;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a:hover {
+  color: crimson;
+}
+
+input,
+textarea,
+button {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.feedback-form {
+  width: 408px;
+  padding: 24px;
+  margin: 40px auto;
+}
+
+.feedback-form label {
   display: block;
-  transition: opacity 0.3s ease;
-  object-fit: cover;
+  margin-bottom: 8px;
+  color: #2e2f42;
 }
 
-.gallery-item:hover .gallery-image {
-  opacity: 0.9;
+.feedback-form input {
+  border: none;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  height: 40px;
 }
 
-.basicLightbox--visible {
-  background: rgba(46, 47, 66, 0.8);
+textarea {
+  border: 1px solid #808080;
+  border-radius: 8px;
+  resize: none;
 }
 
-.basicLightbox__placeholder {
-  background: none;
+input,
+textarea {
+  width: 100%;
+  display: block;
+  padding: 8px 16px;
+  margin-top: 8px;
+  color: #2e2f42 !important;
+  transition: outline 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@media (max-width: 768px) {
-  .gallery-item {
-    flex: 1 1 calc(50% - 10px);
-    max-width: calc(50% - 10px);
-  }
-  .gallery {
-    padding: 10px;
-  }
+input:hover,
+textarea:hover {
+  outline: auto;
 }
 
-@media (max-width: 480px) {
-  .gallery-item {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-  .gallery {
-    padding: 5px;
-  }
+input:focus,
+textarea:focus {
+  border: 1px solid #808080;
+}
+
+button {
+  margin-top: 16px;
+  min-width: 95px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  padding-block: 8px;
+  background-color: #4e75ff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:hover,
+button:focus {
+  background-color: #6c8cff;
+}
+
+.error {
+  border: 1px solid tomato !important;
 }
