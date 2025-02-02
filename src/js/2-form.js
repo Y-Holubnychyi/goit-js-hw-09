@@ -20,6 +20,7 @@ function onInputSaveToLocalStorage(event) {
   formData[name] = value.trim(); 
 
   localStorage.setItem(formState, JSON.stringify(formData));
+  console.log("Saved to Local Storage:", localStorage.getItem(formState)); // Лог для перевірки
 }
 
 function onSubmitForm(event) {
